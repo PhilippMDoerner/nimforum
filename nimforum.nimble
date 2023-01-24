@@ -31,7 +31,7 @@ when NimMajor >= 1 and NimMinor >= 9:
 # Tasks
 
 task backend, "Compiles and runs the forum backend":
-  exec "nimble c --mm:refc src/forum.nim"
+  exec "nimble c --warning:UnusedImport:off --mm:refc src/forum.nim"
   exec "./src/forum"
 
 task runbackend, "Runs the forum backend":
