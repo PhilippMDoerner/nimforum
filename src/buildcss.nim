@@ -9,7 +9,7 @@ proc buildCSS*(config: Config) =
   var includePaths: seq[string] = @[]
   # Check for a styles override.
   var hostname = config.hostname
-  if not existsDir(hostname):
+  if not dirExists(hostname):
     hostname = "localhost.local"
 
   let dir = getCurrentDir() / hostname / "public"
