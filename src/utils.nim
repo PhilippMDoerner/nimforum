@@ -29,7 +29,7 @@ type
     ga*: string
     port*: int
 
-  ForumError* = object of Exception
+  ForumError* = object of CatchableError
     data*: PostError
 
 proc newForumError*(message: string,
