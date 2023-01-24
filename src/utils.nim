@@ -186,5 +186,5 @@ proc rstToHtml*(content: string): string {.gcsafe.}=
     node = processMentions(node)
     result = ""
     add(result, node, indWidth=0, addNewLines=false)
-  except:
+  except CatchableError:
     warn("Could not parse rst html.")
